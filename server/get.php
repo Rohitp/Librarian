@@ -23,7 +23,7 @@ if(!isset($book["volumeInfo"]["pageCount"])) {
   $book["volumeInfo"]["pageCount"] = "NA";
 }
 
-if(!isset($book["volumeInfo"]["authors"][0])) {
+if(!isset($book["volumeInfo"]["authors"])) {
   $book["volumeInfo"]["authors"][0] = "NA";
 }
 

@@ -26,7 +26,7 @@ foreach($results_json['items'] as $books) {
   }
 
 
-  if(!isset($book["volumeInfo"]["authors"][0])) {
+  if(!isset($book["volumeInfo"]["authors"])) {
     $book["volumeInfo"]["authors"][0] = "NA";
   }
 
