@@ -24,6 +24,12 @@ foreach($results_json['items'] as $books) {
   if(!isset($books["volumeInfo"]["pageCount"])) {
     $books["volumeInfo"]["pageCount"] = "NA";
   }
+
+
+  if(!isset($book["volumeInfo"]["authors"][0])) {
+    $book["volumeInfo"]["authors"][0] = "NA";
+  }
+
   $books_array[] = array("id" => $books["id"], "title" => $books["volumeInfo"]["title"], "author" => $books["volumeInfo"]["authors"][0], "description" => $books["volumeInfo"]["description"], "cover" => $books["volumeInfo"]["imageLinks"]["thumbnail"], "rating" => $books["volumeInfo"]["averageRating"], "pages" => $books["volumeInfo"]["pageCount"]);
 }
 // do_dump($results_json);

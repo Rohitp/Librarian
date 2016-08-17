@@ -23,6 +23,12 @@ if(!isset($book["volumeInfo"]["pageCount"])) {
   $book["volumeInfo"]["pageCount"] = "NA";
 }
 
+if(!isset($book["volumeInfo"]["authors"][0])) {
+  $book["volumeInfo"]["authors"][0] = "NA";
+}
+
+
+
 $books_array = array("id" => $book["id"], "title" => $book["volumeInfo"]["title"], "author" => $book["volumeInfo"]["authors"][0], "description" => $book["volumeInfo"]["description"], "cover" => $book["volumeInfo"]["imageLinks"]["thumbnail"], "rating" => $book["volumeInfo"]["averageRating"], "pages" => $book["volumeInfo"]["pageCount"]);
 // foreach ($results_json as $key => $value) {
 //

@@ -3,7 +3,7 @@ var repeat = false;
 
 var apiCall = {
   search : function(query) {
-    var url = apiUrl +'/search.php?title=' + query;
+    var url = apiUrl +'/search.php?query=' + query;
     return Promise.resolve($.ajax(url));
   },
 
@@ -53,6 +53,19 @@ function getRelated(node, exclude) {
             resolve(data.books);
         });
     });
+}
+
+function searchBook() {
+  // console.log($("#movie-search").val());
+  apiCall.search($("#book-search").val())
+         .then(function (data) {
+          //  console.log(data);
+         if (data && data.length) {
+          //  console.log("Here");
+            console.log(data[0]);
+             createRootNode(data[0]);
+         }
+     });
 }
 
 window.AE = {

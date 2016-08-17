@@ -5,7 +5,7 @@ include("dump.php");
 include("db_func.php");
 include("../keys.php");
 
-$q = $_REQUEST['query'];
+$q = urlencode($_REQUEST['query']);
 
 // $books_key = "";
 
@@ -24,6 +24,12 @@ foreach($results_json['items'] as $books) {
   if(!isset($books["volumeInfo"]["pageCount"])) {
     $books["volumeInfo"]["pageCount"] = "NA";
   }
+
+
+  if(!isset($book["volumeInfo"]["authors"][0])) {
+    $book["volumeInfo"]["authors"][0] = "NA";
+  }
+
   $books_array[] = array("id" => $books["id"], "title" => $books["volumeInfo"]["title"], "author" => $books["volumeInfo"]["authors"][0], "description" => $books["volumeInfo"]["description"], "cover" => $books["volumeInfo"]["imageLinks"]["thumbnail"], "rating" => $books["volumeInfo"]["averageRating"], "pages" => $books["volumeInfo"]["pageCount"]);
   // $books_array[] = array("id" => $books["id"], "title" => $books["volumeInfo"]["title"], "author" => $books["volumeInfo"]["authors"][0], "description" => $books["volumeInfo"]["description"], "pages" => $books["volumeInfo"]["pageCount"], "rating" => $books["volumeInfo"]["averageRating"], "cover" => $books["volumeInfo"]["imageLinks"]["thumbnail"]);
 }

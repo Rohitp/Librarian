@@ -111,8 +111,8 @@ var dndTree = (function() {
                 removeExpandedId(node);
             });
         }
-        var indexToRem = exploredArtistIds.indexOf(d.artist.id);
-        exploredArtistIds.splice(indexToRem, 1);
+        var indexToRem = exploredIds.indexOf(d.artist.id);
+        exploredIds.splice(indexToRem, 1);
     }
 
     function removeChildrenFromExplored(d) {
