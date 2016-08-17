@@ -1,4 +1,4 @@
-var apiUrl = "../walle/server";
+var apiUrl = "../librarian/server";
 var repeat = false;
 
 var apiCall = {
