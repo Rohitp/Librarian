@@ -3,12 +3,13 @@
 header('Content-Type: application/json');
 include("dump.php");
 include("db_func.php");
+include("../keys.php");
 
 // mO-62VxpLe0C
 
 $id = $_REQUEST['id'];
 
-$books_key = "";
+// $books_key = "";
 
 $search_url = "https://www.googleapis.com/books/v1/volumes/$id?key=$books_key";
 

@@ -3,10 +3,11 @@
 header('Content-Type: application/json');
 include("dump.php");
 include("db_func.php");
+include("../keys.php");
 
 $q = $_REQUEST['query'];
 
-$books_key = "";
+// $books_key = "";
 
 $search_url = "https://www.googleapis.com/books/v1/volumes?q=$q&key=$books_key";
 
