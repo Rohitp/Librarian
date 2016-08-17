@@ -8,7 +8,7 @@ include("db_func.php");
 
 $id = $_REQUEST['id'];
 
-$books_key = "AIzaSyChxGhtcxfvxuWh36cGy5B4tTkAqU2yNyk";
+$books_key = "";
 
 $search_url = "https://www.googleapis.com/books/v1/volumes/$id/associated?key=$books_key";
 
